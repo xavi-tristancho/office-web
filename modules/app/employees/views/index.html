@@ -1,0 +1,61 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        {{ 'resources.employees.title' | translate }}
+        <small></small>
+    </h1>
+    <div ncy-breadcrumb></div>
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+<div class="row">    
+    <div class="col-md-12">
+        <a ui-sref="CreateEmployees()">
+            <button type="button" class="btn btn-success">
+                {{ 'actions.add' | translate }} {{ 'resources.employees.title' | translate | singular }}
+            </button>
+        </a>        
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <table datatable="ng" dt-options="employees.dtOptions" class="table">
+            <thead>
+            <tr>
+                <th>{{ 'fields.name' | translate }}</th>
+                <th>{{ 'fields.firstName' | translate }}</th>
+                <th>{{ 'fields.secondName' | translate }}</th>
+                <th>{{ 'fields.alias' | translate }}</th>
+                <th>{{ 'fields.mobilePhone' | translate }}</th>
+                <th>{{ 'fields.dni' | translate }}</th>
+                <th>{{ 'fields.email' | translate }}</th>
+                <th>{{ 'actions.actions' | translate }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="employee in employees.employees">
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.first_name }}</td>
+                <td>{{ employee.second_name }}</td>
+                <td>{{ employee.alias }}</td>
+                <td>{{ employee.mobile_phone }}</td>
+                <td>{{ employee.dni }}</td>
+                <td>{{ employee.email }}</td>
+                <td>
+                    <a ui-sref="EditEmployees({ employeeId : employee.id })">
+                        <i class="fa fa-2x fa-pencil"></i>        
+                    </a>
+                    <a ui-sref="IndexEmployeesHours({ employeeId : employee.id })">
+                        <i class="fa fa-2x fa-clock-o"></i>        
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>  
+    </div>
+</div>
+
+</section><!-- /.content -->

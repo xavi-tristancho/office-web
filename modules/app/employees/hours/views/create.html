@@ -1,0 +1,46 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        {{ hours.action }} Employee : {{ hours.employee.name }} {{ hours.employee.first_name }} {{ hours.employee.second_name }}
+        <small></small>
+    </h1>
+    <div ncy-breadcrumb></div>
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="box box-primary">
+            <div class="box-header">
+              <h3 class="box-title">Hour Ticket</h3>
+            </div><!-- /.box-header -->
+            <!-- form start -->
+            <form ng-submit="hours.save()" role="form">
+              <div class="box-body">
+                <div class="form-group">
+                  <label>Start</label>
+                  <input autofocus ng-model="hours.form.start" type="datetime-local" class="form-control" placeholder="Start Date">
+                </div>
+                <div class="form-group">
+                  <label>End</label>
+                  <input ng-model="hours.form.end" type="datetime-local" class="form-control" placeholder="End Date">
+                </div>
+                <div class="form-group">
+                  <label>Customer</label>
+                  <input type="text"
+                    ng-model="hours.form.customer" 
+                    typeahead="customer as hours.getCustomerFullName(customer) for customer in hours.customers | filter:$viewValue | limitTo:8"                    
+                    class="form-control" placeholder="Customer">
+                </div>                
+              </div><!-- /.box-body -->
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary pull-right">{{ 'actions.add' | translate }}</button>
+              </div>
+            </form>
+          </div>
+    </div>
+</div>
+
+</section><!-- /.content -->

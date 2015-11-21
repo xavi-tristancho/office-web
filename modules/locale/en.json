@@ -1,0 +1,23 @@
+{
+	"resources" : {
+		
+	},
+	"views" : {
+		
+	},
+	"alerts" : {
+		"confirm" : {
+			"title" : "Are you sure?",
+			"message" : "The {{ message }} will be deleted!",
+			"cancel" : "No, cancel plx!",
+			"confirm" : "Yes, delete it!"
+		}		
+	},
+	"notifications" : {
+		"done" : "Done!"
+	},
+	"actions" : {
+		"add" : "Add",
+		"view" : "View"
+	}
+}

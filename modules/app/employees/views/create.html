@@ -1,0 +1,66 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        {{ 'actions.' + employees.action | translate }} {{ 'resources.employees.title' | translate | singular }} : {{ employees.form.name }} {{ employees.form.first_name }} {{ employees.form.second_name }}
+        <small></small>
+    </h1>
+    <div ncy-breadcrumb></div>
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="box box-primary">
+            <div class="box-header">
+              <h3 class="box-title">{{ 'fields.profile' | translate }}</h3>
+            </div><!-- /.box-header -->
+            <!-- form start -->
+            <form ng-submit="employees.save()" role="form">
+              <div class="box-body">
+                
+                <div class="row">
+                  <div class="col-md-6">
+                    <form-field type="text" model="employees.form.name" title="{{ 'fields.name' | translate }}"></form-field>
+                  </div>
+                  <div class="col-md-6">
+                    <form-field type="text" model="employees.form.first_name" title="{{ 'fields.firstName' | translate }}"></form-field>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <form-field type="text" model="employees.form.second_name" title="{{ 'fields.secondName' | translate }}"></form-field>
+                  </div>
+                  <div class="col-md-6">
+                    <form-field type="text" model="employees.form.alias" title="{{ 'fields.alias' | translate }}"></form-field>
+                  </div>
+                </div>                                                                          
+                
+                <div class="row">
+                  <div class="col-md-6">
+                    <form-field type="text" model="employees.form.mobile_phone" title="{{ 'fields.mobilePhone' | translate }}"></form-field>                    
+                  </div>
+                  <div class="col-md-6">
+                    <form-field type="text" model="employees.form.dni" title="{{ 'fields.dni' | translate }}"></form-field>
+                  </div>
+                </div>                                          
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <form-field type="email" model="employees.form.email" title="{{ 'fields.email' | translate }}"></form-field>
+                  </div>
+                  <div class="col-md-6"></div>
+                </div>
+
+              </div><!-- /.box-body -->
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary pull-right">{{ 'actions.add' | translate }}</button>
+              </div>
+            </form>
+          </div>
+    </div>
+</div>
+
+</section><!-- /.content -->

@@ -1,0 +1,63 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        {{ 'actions.' + hours.action | translate }} {{ 'resources.employees.hours.title' | translate }} {{ 'resources.employees.title' | translate | singular }} : {{ hours.employee.name }} {{ hours.employee.first_name }} {{ hours.employee.second_name }}
+        <small></small>
+    </h1>
+    <div ncy-breadcrumb></div>
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+    <div class="row">    
+        <div class="col-md-12">
+            <a ui-sref="CreateEmployeesHours({ employeeId : hours.employee.id })">
+                <button type="button" class="btn btn-success">
+                {{ 'actions.add' | translate }} {{ 'resources.employees.hours.title' | translate | singular }}</button>
+            </a>        
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <table datatable="ng" dt-options="hours.dtOptions" class="table">
+                <thead>
+                <tr>
+                    <th>{{ 'fields.start' | translate }}</th>
+                    <th>{{ 'fields.end' | translate }}</th>
+                    <th>{{ 'resources.employees.hours.title' | translate }}</th>
+                    <th>{{ 'resources.customers.title' | translate }}</th>
+                    <th>{{ 'actions.actions' | translate }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="hour in hours.hours">
+                    <td>{{ hour.start | date:"MM/dd/yyyy 'at' H:mm" }}</td>
+                    <td>{{ hour.end | date:"MM/dd/yyyy 'at' H:mm" }}</td>
+                    <td>{{ hours.getElapsedHours(hour.start , hour.end) }}</td>
+                    <td>{{ hour.customer.data.name }} {{ hour.customer.data.first_name }} {{ hour.customer.data.second_name }}</td>
+                    <td>
+                        <a ui-sref="EditEmployeesHours({ employeeId : hours.employee.id, hourId : hour.id })">
+                            <i class="fa fa-2x fa-pencil"></i>        
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>  
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2>{{ 'resources.employees.hours.summary' | translate }}</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <hours-summary employee-id="hours.employeeId"></hours-summary>
+        </div>
+    </div>
+
+</section><!-- /.content -->

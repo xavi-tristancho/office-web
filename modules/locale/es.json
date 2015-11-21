@@ -1,0 +1,54 @@
+{
+	"resources" : {
+		"dashboard" : {
+			"title" : "Tablero de instrumentos"
+		},
+		"customers" : {
+			"title" : "Clientes"
+		},
+		"employees" : {
+			"title" : "Empleados",
+			"hours" : {
+				"extra" : {
+					"month" : "Horas Extras Trabajadas Este Mes"
+				},
+				"worked" : {
+					"month" : "Horas Trabajadas Este Mes"
+				},
+				"title" : "Horas",
+				"summary" : "Resumen"
+			}
+		}
+	},
+	"fields" : {
+		"ticket" : "ticket",
+		"of" : "de",
+		"start" : "Principio",
+		"end" : "Fin",
+		"profile" : "Perfil",
+		"name" : "Nombre",
+		"firstName" : "Primer Apellido",
+		"secondName" : "Segundo Apellido",
+		"alias" : "Alias",
+		"mobilePhone" : "Teléfono Móvil",
+		"dni" : "DNI",
+		"email" : "Email"
+	},
+	"alerts" : {
+		"confirm" : {
+			"title" : "Seguro?",
+			"message" : "El {{ message }} será eliminado!",
+			"cancel" : "No, cancelalo!",
+			"confirm" : "Si, eliminalo!"
+		}		
+	},
+	"notifications" : {
+		"done" : "Hecho!"
+	},
+	"actions" : {
+		"add" : "Añadir",
+		"edit" : "Editar",
+		"view" : "Ver",
+		"actions" : "Acciones"
+	}
+}

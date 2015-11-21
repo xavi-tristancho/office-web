@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-md-4 ">
+        <div class="info-box">
+            <span class="info-box-icon bg-aqua"><i class="fa fa-clock-o"></i></span>
+            <div class="info-box-content">
+              <span class="info-box-text">{{ 'resources.employees.hours.worked.month' | translate }}</span>
+              <span class="info-box-number">{{ summary.summary.worked_hours }}</span>
+            </div><!-- /.info-box-content -->
+        </div>
+    </div>
+
+    <div class="col-md-4 ">
+        <div class="info-box">
+            <span class="info-box-icon bg-green"><i class="fa fa-clock-o"></i> <i class="fa fa-plus"></i></span>
+            <div class="info-box-content">
+              <span class="info-box-text">{{ 'resources.employees.hours.extra.month' | translate }}</span>
+              <span class="info-box-number">{{ summary.summary.extra_hours }}  {{ hours.total }}</span>
+            </div><!-- /.info-box-content -->
+        </div>
+    </div>
+</div>
