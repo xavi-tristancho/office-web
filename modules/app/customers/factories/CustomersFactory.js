@@ -1,8 +1,8 @@
 module.exports = function(ngModule) {
 
-    function Customers($resource)
+    function Customers($resource, urls)
     {
-        return $resource('api/customers/:customerId', { customerId : '@customerId' },
+        return $resource(urls.BASE_API + 'customers/:customerId', { customerId : '@customerId' },
         	{
         		'update': { method:'PUT' }
         	});

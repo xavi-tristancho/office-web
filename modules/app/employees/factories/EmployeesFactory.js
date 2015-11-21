@@ -1,8 +1,8 @@
 module.exports = function(ngModule) {
 
-    function Employees($resource)
+    function Employees($resource, urls)
     {
-        return $resource('api/employees/:employeeId', { employeeId : '@employeeId', hourId : '@hourId' },
+        return $resource(urls.BASE_API + 'employees/:employeeId', { employeeId : '@employeeId', hourId : '@hourId' },
         	{
         		'update': { method:'PUT' }
         	});

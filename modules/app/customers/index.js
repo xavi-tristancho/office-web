@@ -1,5 +1,5 @@
 module.exports = function(ngModule)
 {
     require('./controllers')(ngModule);
-    require('./CustomersFactory')(ngModule);
+    require('./factories')(ngModule);
 }

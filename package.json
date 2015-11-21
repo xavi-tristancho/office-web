@@ -4,6 +4,7 @@
     "start": "node node_modules/.bin/webpack-dev-server --content-base js"
   },
   "devDependencies": {
+    "raw-loader": "^0.5.1",
     "webpack": "^1.8.5",
     "webpack-dev-server": "^1.8.0"
   },

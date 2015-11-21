@@ -1,8 +1,8 @@
 module.exports = function(ngModule) {
 
-    function HoursStatistics($resource)
+    function HoursStatistics($resource, urls)
     {
-        return $resource('api/statistics/employees/:employeeId/hours/:hourId', { employeeId : '@employeeId', hourId : '@hourId' });
+        return $resource(urls.BASE_API + 'statistics/employees/:employeeId/hours/:hourId', { employeeId : '@employeeId', hourId : '@hourId' });
     }
 
     ngModule.factory('HoursStatistics', HoursStatistics);
