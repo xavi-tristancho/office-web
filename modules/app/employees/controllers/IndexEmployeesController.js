@@ -1,20 +1,21 @@
 module.exports = function(ngModule) {
 
-  function IndexEmployeesController(Api, DTOptionsBuilder)
-  {
-    var vm = this;
-
-    vm.getAll = function()
+    function IndexEmployeesController($controller, Api)
     {
-        Api.getAll('Employees')
-            .then(function(employees)
-            {
-                vm.employees = employees;
-            });        
+        var vm = this;
+        vm.base = $controller('BaseController');
+
+        vm.getAll = function()
+        {
+            Api.getAll('Employees')
+                .then(function(employees)
+                {
+                    vm.employees = employees;
+                });
+        }
+
+        vm.dtOptions = vm.base.loadTable(vm.getAll);
     }
 
-    vm.dtOptions = DTOptionsBuilder.fromSource(vm.getAll()).withBootstrap();    
-  }
-
-  ngModule.controller('IndexEmployeesController', IndexEmployeesController);
+    ngModule.controller('IndexEmployeesController', IndexEmployeesController);
 }

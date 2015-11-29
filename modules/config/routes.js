@@ -9,7 +9,7 @@ module.exports = function(ngModule)
                 url: "/",
                 templateUrl: "modules/partials/dashboard.html",
                 ncyBreadcrumb: {
-                    label: 'Dashboard'
+                    label: 'resources.dashboard.title'
                 }
             })
             .state('IndexCustomers', {
@@ -18,7 +18,7 @@ module.exports = function(ngModule)
                 controller : "IndexCustomersController",
                 controllerAs : "customers",
                 ncyBreadcrumb: {
-                    label: 'Customers'
+                    label: 'resources.customers.title'
                 }
             })
             .state('CreateCustomers', {
@@ -27,7 +27,7 @@ module.exports = function(ngModule)
                 controller : "CreateCustomersController",
                 controllerAs : "customers",
                 ncyBreadcrumb: {
-                    label: 'Customers'
+                    label: 'resources.customers.title'
                 }
             })
             .state('EditCustomers', {
@@ -36,7 +36,7 @@ module.exports = function(ngModule)
                 controller : "CreateCustomersController",
                 controllerAs : "customers",
                 ncyBreadcrumb: {
-                    label: 'Customers'
+                    label: 'resources.customers.title'
                 }
             })
             .state('IndexEmployees', {
@@ -45,7 +45,7 @@ module.exports = function(ngModule)
                 controller : "IndexEmployeesController",
                 controllerAs : "employees",
                 ncyBreadcrumb: {
-                    label: 'Employees'
+                    label: 'resources.employees.title'
                 }
             })
             .state('CreateEmployees', {
@@ -54,7 +54,7 @@ module.exports = function(ngModule)
                 controller : "CreateEmployeesController",
                 controllerAs : "employees",
                 ncyBreadcrumb: {
-                    label: 'Employees'
+                    label: 'resources.employees.title'
                 }
             })
             .state('EditEmployees', {
@@ -63,7 +63,7 @@ module.exports = function(ngModule)
                 controller : "CreateEmployeesController",
                 controllerAs : "employees",
                 ncyBreadcrumb: {
-                    label: 'Employees'
+                    label: 'resources.employees.title'
                 }
             })
             .state('IndexEmployeesHours', {
@@ -72,7 +72,7 @@ module.exports = function(ngModule)
                 controller : "IndexEmployeesHoursController",
                 controllerAs : "hours",
                 ncyBreadcrumb: {
-                    label: 'Employees'
+                    label: 'resources.employees.title'
                 }
             })
             .state('CreateEmployeesHours', {
@@ -81,7 +81,7 @@ module.exports = function(ngModule)
                 controller : "CreateEmployeesHoursController",
                 controllerAs : "hours",
                 ncyBreadcrumb: {
-                    label: 'Employees'
+                    label: 'resources.employees.title'
                 }
             })
             .state('EditEmployeesHours', {
@@ -90,7 +90,7 @@ module.exports = function(ngModule)
                 controller : "CreateEmployeesHoursController",
                 controllerAs : "hours",
                 ncyBreadcrumb: {
-                    label: 'Employees'
+                    label: 'resources.employees.title'
                 }
             });
     });

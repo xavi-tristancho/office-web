@@ -1,20 +1,21 @@
-module.exports = function(ngModule) {
-
-  function IndexCustomersController(Api, DTOptionsBuilder)
-  {
-    var vm = this;
-
-    vm.getAll = function()
+module.exports = function(ngModule)
+{
+    function IndexCustomersController($controller, Api)
     {
-        Api.getAll('Customers')
-            .then(function(customers)
-            {
-                vm.customers = customers;
-            });        
+        var vm = this;
+        vm.base = $controller('BaseController');
+
+        vm.getAll = function()
+        {
+            Api.getAll('Customers')
+                .then(function(customers)
+                {
+                    vm.customers = customers;
+                });
+        }
+
+        vm.dtOptions = vm.base.loadTable(vm.getAll);
     }
 
-    vm.dtOptions = DTOptionsBuilder.fromSource(vm.getAll()).withBootstrap();    
-  }
-
-  ngModule.controller('IndexCustomersController', IndexCustomersController);
+    ngModule.controller('IndexCustomersController', IndexCustomersController);
 }

@@ -1,10 +1,10 @@
 module.exports = function(ngModule) {
 
-    function IndexEmployeesHoursController(Api, $stateParams, DTOptionsBuilder)
+    function IndexEmployeesHoursController($controller, $stateParams, Api)
     {
         var vm = this;
+        vm.base = $controller('BaseController');
         vm.employeeId = $stateParams.employeeId;
-
         vm.action = "view";
 
         vm.getAll = function()
@@ -16,10 +16,8 @@ module.exports = function(ngModule) {
                 });        
         }
 
-        vm.dtOptions = DTOptionsBuilder
-                            .fromSource(vm.getAll())
-                            .withBootstrap()
-                            .withOption('order', [[1, "asc"]]);
+        vm.base.order = [[1, "asc"]];
+        vm.dtOptions = vm.base.loadTable(vm.getAll);
 
         vm.find = function()
         {
