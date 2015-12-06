@@ -33,10 +33,10 @@
                 </thead>
                 <tbody>
                 <tr ng-repeat="hour in hours.hours">
-                    <td>{{ hour.start | date:"MM/dd/yyyy 'at' H:mm" }}</td>
-                    <td>{{ hour.end | date:"MM/dd/yyyy 'at' H:mm" }}</td>
+                    <td>{{ hours.base.getLocalizedDate(hour.start) }}</td>
+                    <td>{{ hours.base.getLocalizedDate(hour.end) }}</td>
                     <td>{{ hours.getElapsedHours(hour.start , hour.end) }}</td>
-                    <td>{{ hour.customer.data.name }} {{ hour.customer.data.first_name }} {{ hour.customer.data.second_name }}</td>
+                    <td>{{ hours.base.getCustomerFullName(hour.customer.data) }}</td>
                     <td>
                         <a ui-sref="EditEmployeesHours({ employeeId : hours.employee.id, hourId : hour.id })">
                             <i class="fa fa-2x fa-pencil"></i>        
@@ -48,6 +48,7 @@
         </div>
     </div>
 
+    <!--
     <div class="row">
         <div class="col-md-12">
             <h2>{{ 'resources.employees.hours.summary' | translate }}</h2>
@@ -59,5 +60,6 @@
             <hours-summary employee-id="hours.employeeId"></hours-summary>
         </div>
     </div>
+    -->
 
 </section><!-- /.content -->
