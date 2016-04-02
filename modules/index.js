@@ -7,6 +7,7 @@ require('angular-translate');
 require('angular-resource');
 require('angular-animate');
 require('angular-bootstrap');
+require('angular-sweetalert');
 
 var ngModule = angular.module('office', [
     'ui.router',
@@ -19,7 +20,8 @@ var ngModule = angular.module('office', [
     'ngAnimate',
     'toaster',
     'ui.bootstrap',
-    'lbServices'
+    'lbServices',
+    'oitozero.ngSweetAlert'
 ]);
 
 require('./app')(ngModule);
