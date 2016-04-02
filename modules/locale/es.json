@@ -21,6 +21,15 @@
           "title" : "Horas Mensuales"
         }
       }
+    },
+    "articles" : {
+      "title" : "Articulos"
+    },
+    "families" : {      
+      "title" : "Familias"
+    },
+    "providers" : {
+      "title" : "Proveedores"
     }
   },
   "fields" : {
@@ -37,7 +46,12 @@
     "mobilePhone" : "Teléfono Móvil",
     "dni" : "DNI",
     "email" : "Email",
-    "at" : "a las"
+    "at" : "a las",
+    "reference" : "Referencia",
+    "purchasePrice" : "Precio de Compra", 
+    "costPrice" : "Precio de Coste",
+    "sellPrice" : "Precio de Venta",
+    "quantity" : "Cantidad"
   },
   "alerts" : {
     "confirm" : {

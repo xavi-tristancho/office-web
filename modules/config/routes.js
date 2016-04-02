@@ -101,6 +101,33 @@ module.exports = function(ngModule)
                 ncyBreadcrumb: {
                     label: 'resources.employees.title'
                 }
+            })
+            .state('IndexArticles', {
+                url: "/articles",
+                templateUrl: "/modules/app/articles/views/index.html",
+                controller : "IndexArticlesController",
+                controllerAs : "articles",
+                ncyBreadcrumb: {
+                    label: 'resources.articles.title'
+                }
+            })
+            .state('CreateArticles', {
+                url: "/articles/create",
+                templateUrl: "/modules/app/articles/views/create.html",
+                controller : "CreateArticlesController",
+                controllerAs : "articles",
+                ncyBreadcrumb: {
+                    label: 'resources.articles.title'
+                }
+            })
+            .state('EditArticles', {
+                url: "/articles/:articleId/edit",
+                templateUrl: "/modules/app/articles/views/create.html",
+                controller : "CreateArticlesController",
+                controllerAs : "articles",
+                ncyBreadcrumb: {
+                    label: 'resources.articles.title'
+                }
             });
     });
 }

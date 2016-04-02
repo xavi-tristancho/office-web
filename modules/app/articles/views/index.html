@@ -1,0 +1,56 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        {{ 'resources.articles.title' | translate }}
+        <small></small>
+    </h1>
+    <div ncy-breadcrumb></div>
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+<div class="row">    
+    <div class="col-md-12">
+        <a ui-sref="CreateArticles()">
+            <button type="button" class="btn btn-success">
+                {{ 'actions.add' | translate }} {{ 'resources.articles.title' | translate | singular }}
+            </button>
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">    
+        <table datatable="ng" dt-options="articles.dtOptions" class="table">
+            <thead>
+            <tr>
+                <th>{{ 'fields.name' | translate }}</th>
+                <th>{{ 'fields.reference' | translate }}</th>
+                <th>{{ 'fields.purchasePrice' | translate }}</th>
+                <th>{{ 'fields.costPrice' | translate }}</th>
+                <th>{{ 'fields.sellPrice' | translate }}</th>
+                <th>{{ 'fields.quantity' | translate }}</th>                
+                <th>{{ 'actions.actions' | translate }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="article in articles.articles">
+                <td>{{ article.name }}</td>
+                <td>{{ article.reference }}</td>
+                <td>{{ article.purchasePrice }}</td>
+                <td>{{ article.costPrice }}</td>
+                <td>{{ article.sellPrice }}</td>
+                <td>{{ article.quantity }}</td>                
+                <td>
+                    <a ui-sref="EditArticles({ articleId : article.id })">
+                        <i class="fa fa-2x fa-pencil"></i>        
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>  
+    </div>
+</div>
+
+</section><!-- /.content -->

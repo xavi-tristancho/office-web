@@ -1,0 +1,66 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        {{ 'actions.' + articles.action | translate }} {{ 'resources.articles.title' | translate | singular }}
+        <small></small>
+    </h1>
+    <div ncy-breadcrumb></div>
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="box box-primary">
+            <div class="box-header">
+              <h3 class="box-title">{{ 'resources.articles.title' | translate | singular }}</h3>
+            </div><!-- /.box-header -->
+            <!-- form start -->
+            <form ng-submit="articles.save()" role="form">
+              <div class="box-body">
+                
+                <div class="row">
+                  <div class="col-md-6">
+                    <form-field type="text" model="articles.form.name" title="{{ 'fields.name' | translate }}"></form-field>
+                  </div>
+                  <div class="col-md-6">
+                    <form-field type="text" model="articles.form.reference" title="{{ 'fields.reference' | translate }}"></form-field>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <form-field type="text" model="articles.form.costPrice" title="{{ 'fields.costPrice' | translate }}"></form-field>
+                  </div>
+                  <div class="col-md-6">
+                    <form-field type="text" model="articles.form.purchasePrice" title="{{ 'fields.purchasePrice' | translate }}"></form-field>
+                  </div>
+                </div>                                                                          
+                
+                <div class="row">
+                  <div class="col-md-6">
+                    <form-field type="text" model="articles.form.costPrice" title="{{ 'fields.costPrice' | translate }}"></form-field>                    
+                  </div>
+                  <div class="col-md-6">
+                    <form-field type="text" model="articles.form.sellPrice" title="{{ 'fields.sellPrice' | translate }}"></form-field>
+                  </div>
+                </div>                                          
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <form-field type="text" model="articles.form.quantity" title="{{ 'fields.quantity' | translate }}"></form-field>
+                  </div>
+                  <div class="col-md-6"></div>
+                </div>
+                                
+              </div><!-- /.box-body -->
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary pull-right">{{ 'actions.' + articles.action | translate }}</button>
+              </div>
+            </form>
+          </div>
+    </div>
+</div>
+
+</section><!-- /.content -->
