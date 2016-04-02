@@ -1,4 +1,6 @@
 {
+  "name": "Office",
+  "version": "1.0.0",  
   "private": true,
   "scripts": {
     "start": "node node_modules/.bin/webpack-dev-server --content-base js"

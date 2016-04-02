@@ -56,7 +56,7 @@
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
-	eval("module.exports = function(ngModule)\n{\n    __webpack_require__(13)(ngModule);\n    __webpack_require__(14)(ngModule);\n    __webpack_require__(15)(ngModule);\n    __webpack_require__(16)(ngModule);\n}\n\n/*****************\n ** WEBPACK FOOTER\n ** ./config/index.js\n ** module id = 2\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./config/index.js?");
+	eval("module.exports = function(ngModule)\n{\n    __webpack_require__(13)(ngModule);\n    __webpack_require__(14)(ngModule);\n    __webpack_require__(15)(ngModule);\n    __webpack_require__(16)(ngModule);\n    __webpack_require__(68)(ngModule);\n}\n\n/*****************\n ** WEBPACK FOOTER\n ** ./config/index.js\n ** module id = 2\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./config/index.js?");
 
 /***/ },
 /* 3 */
@@ -128,7 +128,7 @@
 /* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
-	eval("module.exports = function(ngModule)\n{\n    ngModule.constant('urls', {\n        BASE_API: 'http://localhost:3000/api/'\n    });\n\n    ngModule.config(function(LoopBackResourceProvider, urls) {\n    \t\n    \tLoopBackResourceProvider.setUrlBase(urls.BASE_API);\n    });\n}\n\n/*****************\n ** WEBPACK FOOTER\n ** ./config/constants.js\n ** module id = 14\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./config/constants.js?");
+	eval("module.exports = function(ngModule)\n{\n    ngModule.constant('urls', {\n        BASE_API: 'http://localhost:3000/api/'\n    });\n}\n\n/*****************\n ** WEBPACK FOOTER\n ** ./config/constants.js\n ** module id = 14\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./config/constants.js?");
 
 /***/ },
 /* 15 */
@@ -422,6 +422,12 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	eval("module.exports = function(ngModule)\n{\n    function IndexArticlesController($controller, Article)\n    {\n        var vm = this;\n        vm.base = $controller('BaseController');\n\n        vm.getAll = function()\n        {\n            vm.articles = Article.find();\n        }\n\n        vm.dtOptions = vm.base.loadTable(vm.getAll);\n    }\n\n    ngModule.controller('IndexArticlesController', IndexArticlesController);\n}\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/articles/controllers/IndexArticlesController.js\n ** module id = 67\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/articles/controllers/IndexArticlesController.js?");
+
+/***/ },
+/* 68 */
+/***/ function(module, exports, __webpack_require__) {
+
+	eval("module.exports = function(ngModule)\n{\n    ngModule.config(function(LoopBackResourceProvider, urls) {    \t    \n    \tLoopBackResourceProvider.setUrlBase(urls.BASE_API);    \t\n    });\n}\n\n/*****************\n ** WEBPACK FOOTER\n ** ./config/config.js\n ** module id = 68\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./config/config.js?");
 
 /***/ }
 /******/ ]);
