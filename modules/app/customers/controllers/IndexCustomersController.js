@@ -1,17 +1,13 @@
 module.exports = function(ngModule)
 {
-    function IndexCustomersController($controller, Api)
+    function IndexCustomersController($controller, Customer)
     {
         var vm = this;
         vm.base = $controller('BaseController');
 
         vm.getAll = function()
         {
-            Api.getAll('Customers')
-                .then(function(customers)
-                {
-                    vm.customers = customers;
-                });
+            vm.customers = Customer.find();
         }
 
         vm.dtOptions = vm.base.loadTable(vm.getAll);

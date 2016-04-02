@@ -1,46 +1,25 @@
 module.exports = function(ngModule) {
 
-  function CreateCustomersController(Api, $state, $stateParams)
-  {
+  function CreateCustomersController($state, $stateParams, Customer, Notifications){
     var vm = this;
     vm.form = {};
 
-    vm.find = function()
-    {
-      Api.find('Customers', {customerId : $stateParams.customerId })
-        .then(function(customer)
-        {
-            vm.form = customer;
-        });
+    vm.find = function(){
+      vm.form = Customer.findById({ id: $stateParams.customerId});      
     }    
 
-    vm.save = function()
-    {
-        if(typeof vm.form.id != 'undefined')
-        {
-            Api.update('Customers', vm.form, { customerId : vm.form.id })
-            .then(function()
-            {
-                $state.go('IndexCustomers');
-            });
-        }
-        else
-        {
-            Api.save('Customers', vm.form)
-            .then(function()
-            {
-                $state.go('IndexCustomers');
-            });
-        }        
+    vm.save = function(){              
+      Customer.upsert(vm.form, function(result){
+        $state.go('IndexCustomers');
+      }, function(error){
+        Notifications.error(error);
+      });                
     }
 
-    if(typeof $stateParams.customerId != 'undefined')
-    {
+    if(typeof $stateParams.customerId != 'undefined'){
         vm.action = "edit";
         vm.find();
-    }
-    else
-    {
+    } else {
         vm.action = "add";        
     }   
   }

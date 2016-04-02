@@ -5,4 +5,5 @@ module.exports = function(ngModule)
     require('./plural')(ngModule);
     require('./lowercase')(ngModule);
     require('./ucfirst')(ngModule);
+    require('./range')(ngModule);
 }

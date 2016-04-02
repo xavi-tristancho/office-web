@@ -18,7 +18,8 @@ var ngModule = angular.module('office', [
     'ngResource',
     'ngAnimate',
     'toaster',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'lbServices'
 ]);
 
 require('./app')(ngModule);

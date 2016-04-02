@@ -9,7 +9,7 @@ module.exports = function(ngModule) {
 
         this.error = function(error)
         {
-            toaster.error(error.status_code.toString(), error.message);        	   		
+            toaster.error(error.status.toString(), error.statusText);        	   		
         }
 
         return this;

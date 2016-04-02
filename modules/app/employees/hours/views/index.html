@@ -11,11 +11,15 @@
 <section class="content">
 
     <div class="row">    
-        <div class="col-md-12">
+        <div class="col-md-6">
             <a ui-sref="CreateEmployeesHours({ employeeId : hours.employee.id })">
                 <button type="button" class="btn btn-success">
                 {{ 'actions.add' | translate }} {{ 'resources.employees.hours.title' | translate | singular }}</button>
-            </a>        
+            </a>
+            <a ui-sref="MonthlyEmployeesHours({ employeeId : hours.employee.id })">
+                <button type="button" class="btn btn-primary">
+                {{ 'actions.view' | translate }} {{ 'resources.employees.hours.monthly.title' | translate }}</button>
+            </a>
         </div>
     </div>
 

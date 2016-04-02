@@ -1,0 +1,32 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        {{ 'actions.' + monthlyHours.action | translate }} {{ 'resources.employees.hours.monthly.title' | translate }}: {{ monthlyHours.employee.name }} {{ monthlyHours.employee.first_name }} {{ monthlyHours.employee.second_name }}
+        <small></small>
+    </h1>
+    <div ncy-breadcrumb></div>
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <theader>
+                    <tr>
+                        <th style="width: 10px">Dia</th>
+                        <th>Horas</th>
+                    </tr>
+                </theader>
+                <tbody>
+                    <tr ng-repeat="n in [] | range:monthlyHours.month.days">
+                        <td>{{ $index + 1 }}</td>
+                        <td>8</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</section><!-- /.content -->

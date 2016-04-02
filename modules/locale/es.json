@@ -16,7 +16,10 @@
           "month" : "Horas Trabajadas Este Mes"
         },
         "title" : "Horas",
-        "summary" : "Resumen"
+        "summary" : "Resumen",
+        "monthly" : {
+          "title" : "Horas Mensuales"
+        }
       }
     }
   },

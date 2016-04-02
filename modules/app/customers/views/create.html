@@ -1,7 +1,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        {{ 'actions.' + customers.action | translate }} {{ 'resources.customers.title' | translate | singular }} : {{ customers.form.name }} {{ customers.form.first_name }} {{ customers.form.second_name }}
+        {{ 'actions.' + customers.action | translate }} {{ 'resources.customers.title' | translate | singular }} : {{ customers.form.name }} {{ customers.form.firstName }} {{ customers.form.secondName }}
         <small></small>
     </h1>
     <div ncy-breadcrumb></div>
@@ -25,13 +25,13 @@
                     <form-field type="text" model="customers.form.name" title="{{ 'fields.name' | translate }}"></form-field>
                   </div>
                   <div class="col-md-6">
-                    <form-field type="text" model="customers.form.first_name" title="{{ 'fields.firstName' | translate }}"></form-field>
+                    <form-field type="text" model="customers.form.firstName" title="{{ 'fields.firstName' | translate }}"></form-field>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="col-md-6">
-                    <form-field type="text" model="customers.form.second_name" title="{{ 'fields.secondName' | translate }}"></form-field>
+                    <form-field type="text" model="customers.form.secondName" title="{{ 'fields.secondName' | translate }}"></form-field>
                   </div>
                   <div class="col-md-6">
                     <form-field type="text" model="customers.form.alias" title="{{ 'fields.alias' | translate }}"></form-field>
@@ -40,7 +40,7 @@
                 
                 <div class="row">
                   <div class="col-md-6">
-                    <form-field type="text" model="customers.form.mobile_phone" title="{{ 'fields.mobilePhone' | translate }}"></form-field>                    
+                    <form-field type="text" model="customers.form.mobilePhone" title="{{ 'fields.mobilePhone' | translate }}"></form-field>                    
                   </div>
                   <div class="col-md-6">
                     <form-field type="text" model="customers.form.dni" title="{{ 'fields.dni' | translate }}"></form-field>

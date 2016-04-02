@@ -75,6 +75,15 @@ module.exports = function(ngModule)
                     label: 'resources.employees.title'
                 }
             })
+            .state('MonthlyEmployeesHours', {
+                url: "/employees/:employeeId/hours/show/monthly",
+                templateUrl: "/modules/app/employees/hours/views/monthly.html",
+                controller : "MonthlyEmployeesHoursController",
+                controllerAs : "monthlyHours",
+                ncyBreadcrumb: {
+                    label: 'resources.employees.hours.monthly.title'
+                }
+            })
             .state('CreateEmployeesHours', {
                 url: "/employees/:employeeId/hours/create",
                 templateUrl: "/modules/app/employees/hours/views/create.html",
