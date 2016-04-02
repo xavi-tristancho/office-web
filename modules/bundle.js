@@ -128,7 +128,7 @@
 /* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
-	eval("module.exports = function(ngModule)\n{\n    ngModule.constant('urls', {\n        BASE_API: 'http://localhost:3000/api'\n    });\n\n    ngModule.config(function(LoopBackResourceProvider, urls) {\n    \t\n    \tLoopBackResourceProvider.setUrlBase(urls.BASE_API);\n    });\n}\n\n/*****************\n ** WEBPACK FOOTER\n ** ./config/constants.js\n ** module id = 14\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./config/constants.js?");
+	eval("module.exports = function(ngModule)\n{\n    ngModule.constant('urls', {\n        BASE_API: 'http://localhost:3000/api/'\n    });\n\n    ngModule.config(function(LoopBackResourceProvider, urls) {\n    \t\n    \tLoopBackResourceProvider.setUrlBase(urls.BASE_API);\n    });\n}\n\n/*****************\n ** WEBPACK FOOTER\n ** ./config/constants.js\n ** module id = 14\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./config/constants.js?");
 
 /***/ },
 /* 15 */
@@ -310,7 +310,7 @@
 /* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
-	eval("module.exports = function(ngModule) {\n\n  function CreateCustomersController($state, $stateParams, Customer, Notifications){\n    var vm = this;\n    vm.form = {};\n\n    vm.find = function(){\n      vm.form = Customer.findById({ id: $stateParams.customerId});      \n    }    \n\n    vm.save = function(){              \n      Customer.upsert(vm.form, function(result){\n        $state.go('IndexCustomers');\n      }, function(error){\n        Notifications.error(error);\n      });                \n    }\n\n    if(typeof $stateParams.customerId != 'undefined'){\n        vm.action = \"edit\";\n        vm.find();\n    } else {\n        vm.action = \"add\";        \n    }   \n  }\n\n  ngModule.controller('CreateCustomersController', CreateCustomersController);\n}\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/customers/controllers/CreateCustomersController.js\n ** module id = 46\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/customers/controllers/CreateCustomersController.js?");
+	eval("module.exports = function(ngModule) {\n\n  function CreateCustomersController($state, $stateParams, Customer, Notifications){\n    var vm = this;\n    vm.form = { id: null };\n\n    vm.find = function(){\n      vm.form = Customer.findById({ id: $stateParams.customerId});      \n    }    \n\n    vm.save = function(){              \n      Customer.upsert(vm.form, function(success){\n        $state.go('IndexCustomers');\n      }, function(error){\n        Notifications.error(error);\n      });                \n    }\n\n    if(typeof $stateParams.customerId != 'undefined'){\n        vm.action = \"edit\";\n        vm.find();\n    } else {\n        vm.action = \"add\";        \n    }   \n  }\n\n  ngModule.controller('CreateCustomersController', CreateCustomersController);\n}\n\n/*****************\n ** WEBPACK FOOTER\n ** ./app/customers/controllers/CreateCustomersController.js\n ** module id = 46\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./app/customers/controllers/CreateCustomersController.js?");
 
 /***/ },
 /* 47 */,
