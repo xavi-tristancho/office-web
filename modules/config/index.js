@@ -4,4 +4,5 @@ module.exports = function(ngModule)
     require('./constants')(ngModule);
     require('./breadcrumbs')(ngModule);
     require('./datatables')(ngModule);
+    require('./config')(ngModule);
 }
