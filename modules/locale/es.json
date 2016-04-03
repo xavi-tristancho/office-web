@@ -69,5 +69,13 @@
     "edit" : "Editar",
     "view" : "Ver",
     "actions" : "Acciones"
+  },
+  "table" : {
+    "next" : "Siguiente",
+    "previous" : "Anterior",
+    "showing" : "Mostrando",
+    "entries" : "Entradas",
+    "to" : "a",
+    "of" : "de"
   }
 }

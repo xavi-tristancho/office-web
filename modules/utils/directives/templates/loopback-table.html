@@ -18,15 +18,15 @@
 
 <div class="row">
     <div class="col-sm-5">
-        <div>Showing {{ table.offset }} to {{ table.limit + table.offset }} of {{ table.count }} entries</div>
+        <div>{{ 'table.showing' | translate }} {{ table.offset }} {{ 'table.to' | translate }} {{ table.limit + table.offset }} {{ 'table.of' | translate }} {{ table.count }} {{ 'table.entries' | translate }}</div>
     </div>
     <div class="col-sm-7">
         <ul class="pagination pagination-sm no-margin pull-right">
             <li ng-class="{'disabled' : table.offset == 0}" class="paginate_button previous">
-                <a href ng-click="table.previous()">Previous</a>
+                <a href ng-click="table.previous()">{{ 'table.previous' | translate }}</a>
             </li>
             <li ng-class="{'disabled' : table.offset + table.limit >= table.count}" class="paginate_button next">
-                <a href ng-click="table.next()">Next</a>
+                <a href ng-click="table.next()">{{ 'table.next' | translate }}</a>
             </li>
         </ul>  
     </div>
