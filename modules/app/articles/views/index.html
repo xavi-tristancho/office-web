@@ -21,35 +21,29 @@
 </div>
 
 <div class="row">
-    <div class="col-md-12">    
-        <table datatable="ng" dt-options="articles.dtOptions" class="table">
+    <div class="col-md-12" loopback-table resource="Article" resources="articles.articles" searchable-properties="articles.searchableProperties">
+        <table class="table table-striped table-hover table-condensed table-responisve">
             <thead>
-            <tr>
-                <th>{{ 'fields.name' | translate }}</th>
-                <th>{{ 'fields.reference' | translate }}</th>
-                <th>{{ 'fields.purchasePrice' | translate }}</th>
-                <th>{{ 'fields.costPrice' | translate }}</th>
-                <th>{{ 'fields.sellPrice' | translate }}</th>
-                <th>{{ 'fields.quantity' | translate }}</th>                
-                <th>{{ 'actions.actions' | translate }}</th>
-            </tr>
+                <tr>
+                    <th>{{ 'fields.name' | translate }}</th>
+                    <th>{{ 'fields.reference' | translate }}</th>
+                    <th>{{ 'fields.purchasePrice' | translate }}</th>
+                    <th>{{ 'fields.costPrice' | translate }}</th>
+                    <th>{{ 'fields.sellPrice' | translate }}</th>
+                    <th>{{ 'fields.quantity' | translate }}</th>                        
+                </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="article in articles.articles">
-                <td>{{ article.name }}</td>
-                <td>{{ article.reference }}</td>
-                <td>{{ article.purchasePrice }}</td>
-                <td>{{ article.costPrice }}</td>
-                <td>{{ article.sellPrice }}</td>
-                <td>{{ article.quantity }}</td>                
-                <td>
-                    <a ui-sref="EditArticles({ articleId : article.id })">
-                        <i class="fa fa-2x fa-pencil"></i>        
-                    </a>
-                </td>
-            </tr>
+                <tr ng-repeat="article in articles.articles">
+                    <td>{{ article.name }}</td>
+                    <td>{{ article.reference }}</td>
+                    <td>{{ article.purchasePrice }}</td>
+                    <td>{{ article.costPrice }}</td>
+                    <td>{{ article.sellPrice }}</td>
+                    <td>{{ article.quantity }}</td>                  
+                </tr>
             </tbody>
-        </table>  
+        </table>
     </div>
 </div>
 

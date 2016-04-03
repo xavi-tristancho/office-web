@@ -2,15 +2,9 @@ module.exports = function(ngModule)
 {
     function IndexArticlesController($controller, $translate, Article, Alerts)
     {
-        var vm = this;
-        vm.base = $controller('BaseController');
-
-        vm.getAll = function()
-        {
-            vm.articles = Article.find();
-        }
-
-        vm.dtOptions = vm.base.loadTable(vm.getAll);
+        var vm = this;                        
+        vm.articles = null        
+        vm.searchableProperties = ["name", "reference"];                
 
         vm.delete = function(id)
         {            
