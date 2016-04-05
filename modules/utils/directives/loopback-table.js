@@ -7,21 +7,20 @@ module.exports = function(ngModule)
             transclude: true,
             template : require("./templates/loopback-table.html"),
             scope: {
-                resource: '@',
-                resources: '=',
-                searchableProperties: '='                
+                config: '='               
             },
             controller : function($scope, $injector)
             {
+                var where = null;
+                var model = $injector.get($scope.config.model);
                 var vm = this;
+
                 vm.offset = 0;
                 vm.limit = 10;
-                vm.search = '';
-                var where = null;
-                var model = $injector.get($scope.resource);
+                vm.search = '';                
 
                 vm.getResources = function(){                    
-                    $scope.resources = model.find({
+                    $scope.config.data = model.find({
                         filter: { 
                             offset: vm.offset, 
                             limit: vm.limit,
@@ -33,9 +32,9 @@ module.exports = function(ngModule)
                 var constructWhereClause = function(){                                        
                     var clauses = [];
 
-                    for (var property in $scope.searchableProperties) {
+                    for (var property in $scope.config.searchableProperties) {
                         var clause = {};
-                        clause[$scope.searchableProperties[property]] = { like: '%' + vm.search + '%'};
+                        clause[$scope.config.searchableProperties[property]] = { like: '%' + vm.search + '%'};
                         clauses.push(clause);
                     }
 
