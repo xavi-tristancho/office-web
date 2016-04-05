@@ -4,10 +4,10 @@
       "title" : "Tablero de instrumentos"
     },
     "customers" : {
-      "title" : "Clientes"
+      "title" : "Cliente"
     },
     "employees" : {
-      "title" : "Empleados",
+      "title" : "Empleado",
       "hours" : {
         "extra" : {
           "month" : "Horas Extras Trabajadas Este Mes"
@@ -23,13 +23,13 @@
       }
     },
     "articles" : {
-      "title" : "Articulos"
+      "title" : "Articulo"
     },
     "families" : {      
-      "title" : "Familias"
+      "title" : "Familia"
     },
     "providers" : {
-      "title" : "Proveedores"
+      "title" : "Proveedor"
     }
   },
   "fields" : {
@@ -68,6 +68,7 @@
     "add" : "Añadir",
     "edit" : "Editar",
     "view" : "Ver",
+    "delete" : "Eliminar",
     "actions" : "Acciones"
   },
   "table" : {

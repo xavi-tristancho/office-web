@@ -111,6 +111,15 @@ module.exports = function(ngModule)
                     label: 'resources.articles.title'
                 }
             })
+            .state('ShowArticles', {
+                url: "/articles/:articleId/",
+                templateUrl: "/modules/app/articles/views/show.html",
+                controller : "ShowArticlesController",
+                controllerAs : "articles",
+                ncyBreadcrumb: {
+                    label: 'resources.articles.title'
+                }
+            })
             .state('CreateArticles', {
                 url: "/articles/create",
                 templateUrl: "/modules/app/articles/views/create.html",
